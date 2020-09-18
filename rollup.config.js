@@ -1,5 +1,6 @@
 import typescript from 'rollup-plugin-typescript2';
 import del from 'rollup-plugin-delete';
+import postcss from 'rollup-plugin-postcss';
 import pkg from './package.json';
 
 export default [
@@ -16,6 +17,11 @@ export default [
 		],
 		plugins: [
 			del({ targets: ['dist/*', 'playground/src/component-lib'] }),
+			postcss({
+				extract: false,
+				modules: true,
+				use: ['sass'],
+			}),
 			typescript({
 				tsconfigOverride: { compilerOptions : { module: "es2015" } }
 			}),

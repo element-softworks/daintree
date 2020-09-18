@@ -8,9 +8,11 @@
 		"@types/react": "^16.9.49",
 		"@types/react-dom": "^16.9.8",
 		"@types/styled-components": "^5.1.3",
+		"node-sass": "^4.14.1",
 		"npm-run-all": "^4.1.5",
 		"rollup": "^2.27.1",
 		"rollup-plugin-delete": "^2.0.0",
+		"rollup-plugin-postcss": "^3.1.8",
 		"rollup-plugin-typescript2": "^0.27.2",
 		"typescript": "^4.0.2"
 	},
@@ -26,7 +28,8 @@
 		"build-watch": "rollup src/index.ts -c -w",
 		"start-playground": "cd playground && yarn run start",
 		"i-all": "yarn && cd playground && yarn",
-		"dev": "npm-run-all --parallel build-watch start-playground"
+		"dev": "npm-run-all --parallel build-watch start-playground",
+		"build2": "webpack --mode=development"
 	},
 	"files": [
 		"dist"
@@ -34,5 +37,8 @@
 	"typings": "dist/index.d.ts",
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com"
+	},
+	"dependencies": {
+		"theming": "^3.3.0"
 	}
 }
