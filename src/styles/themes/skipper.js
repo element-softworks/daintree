@@ -10,7 +10,8 @@ export default {
 	appBorderRadius: 4,
 
 	// Typography
-	fontBase: '"Open Sans", sans-serif',
+	fontPrimary: 'proxima-nova, sans-serif',
+	fontSecondary: 'proxima-nova, sans-serif',
 	fontCode: 'monospace',
 
 	// Text colors

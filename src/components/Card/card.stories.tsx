@@ -11,8 +11,8 @@ const Template: Story<CardProps> = (args) => <Card {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  title: 'test',
-  paragraph: 'Primary',
+  title: 'This is a card component',
+  paragraph: 'Luke made all this beautiful styling, imagine what more this could be.',
 };
 
 export default {

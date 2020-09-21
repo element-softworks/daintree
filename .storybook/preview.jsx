@@ -57,6 +57,7 @@ export const parameters = {
 const withThemeProvider = (Story, context) => {
 	const theme = clientThemes[context.globals.theme];
 	parameters.backgrounds.default = context.globals.theme;
+	console.log(12, parameters.backgrounds);
 	return (
 		<ThemeProvider theme={theme}>
 			<Story {...context} />
