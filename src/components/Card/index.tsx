@@ -9,18 +9,22 @@ type CardProps = {
 }
 
 interface Theme {
-    colorPrimary: string;
-    background: string;
+    base: string
+    colorPrimary: string
+    colorSecondary: string
+    cardBorder: string
+    cardBackground: string
 }
 
 const Card: React.FC<CardProps> = ({title, paragraph}) => {
     const theme: Theme = useTheme();
     console.log({theme});
     return (
-        <div className={styles.main}>
-            <h2 style={{background: theme?.colorPrimary ?? "blue"}}>{ title }</h2>
+        <div className={styles.main} style={{background: theme?.cardBackground ?? "blue", border: theme?.cardBorder ?? "5px solid red"}}>
+            <h2>{ title }</h2>
             <p>
-                TEST2 <span>{theme}</span>
+                {/*TEST2 <span>{theme}</span>*/}
+                {theme?.cardBackground }
                 { paragraph }
             </p>
         </div>

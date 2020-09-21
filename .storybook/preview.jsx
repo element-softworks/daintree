@@ -40,11 +40,23 @@ export const parameters = {
 	docs: {
 		theme: themes.dark,
 	},
+	backgrounds: {
+		default: 'skipper',
+		values: [
+			{
+				name: 'gundies',
+				value: '#1d1d1d'
+			},
+			{
+				name: 'skipper',
+				value: '#f8f8f8'
+			},
+		],
+	}
 }
 const withThemeProvider = (Story, context) => {
-	console.log(23, context.globals.theme);
-	console.log(23, clientThemes);
 	const theme = clientThemes[context.globals.theme];
+	parameters.backgrounds.default = context.globals.theme;
 	return (
 		<ThemeProvider theme={theme}>
 			<Story {...context} />
