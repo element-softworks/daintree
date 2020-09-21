@@ -2,13 +2,14 @@ import React from 'react';
 import styles from './styles.module.scss';
 import { useTheme } from 'theming';
 
+
 type CardProps = {
     title: string,
     paragraph?: string  // the paragraph is optional
 }
 
 interface Theme {
-    color: string;
+    colorPrimary: string;
     background: string;
 }
 
@@ -17,9 +18,9 @@ const Card: React.FC<CardProps> = ({title, paragraph}) => {
     console.log({theme});
     return (
         <div className={styles.main}>
-            <h2 style={{background: theme?.color ?? "blue"}}>{ title }</h2>
+            <h2 style={{background: theme?.colorPrimary ?? "blue"}}>{ title }</h2>
             <p>
-                TEST2
+                TEST2 <span>{theme}</span>
                 { paragraph }
             </p>
         </div>

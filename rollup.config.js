@@ -5,7 +5,7 @@ import pkg from './package.json';
 
 export default [
 	{
-		input: 'src/index.ts',
+		input: 'src/components/index.ts',
 		output: [
 			{
 				file: 'playground/src/component-lib/index.js',
