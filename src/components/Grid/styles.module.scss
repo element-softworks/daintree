@@ -1,0 +1,296 @@
+@import '@module';
+
+.grid {
+    width: 100%;
+    padding: $hsu;
+
+    &.grid-no-padding {
+        padding: 0;
+    }
+
+    &.grid-full-height {
+        height: inherit;
+    }
+
+    @include sm {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    @include md {
+        width: 100%;
+        max-width: 100%;
+        padding: $bsu;
+    }
+
+    @include lg {
+        width: 100%;
+        max-width: 100%;
+        padding: $tsu 80px;
+    }
+
+    @include xl {
+        width: $container-width;
+        max-width: 100%;
+    }
+}
+
+.row {
+    margin-left: -$hsu !important;
+    margin-right: -$hsu !important;
+
+    &.row-direction-row-xs {
+        flex-direction: row;
+    }
+
+    &.row-direction-column-xs {
+        flex-direction: column;
+    }
+
+    @include sm {
+        &.row-direction-row-sm {
+            flex-direction: row;
+        }
+
+        &.row-direction-column-sm {
+            flex-direction: column;
+        }
+    }
+
+    @include md {
+        &.row-direction-row-md {
+            flex-direction: row;
+        }
+
+        &.row-direction-column-md {
+            flex-direction: column;
+        }
+    }
+
+    @include lg {
+        &.row-direction-row-lg {
+            flex-direction: row;
+        }
+
+        &.row-direction-column-lg {
+            flex-direction: column;
+        }
+    }
+
+    @include xl {
+        &.row-direction-row-xl {
+            flex-direction: row;
+        }
+
+        &.row-direction-column-xl {
+            flex-direction: column;
+        }
+    }
+}
+
+.col {
+    padding-left: $hsu !important;
+    padding-right: $hsu !important;
+
+    @mixin shrink {
+        flex-shrink: 1;
+        flex-grow: 0;
+        flex-basis: auto;
+    }
+
+    @mixin grow {
+        flex-shrink: 0;
+        flex-grow: 1;
+        flex-basis: auto;
+    }
+
+    &.col-shrink,
+    &.col-xs-shrink {
+        @include shrink;
+    }
+
+    &.col-grow,
+    &.col-xs-grow {
+        @include grow;
+    }
+
+    @include sm {
+        &.col-sm-shrink {
+            @include shrink;
+        }
+
+        &.col-sm-grow {
+            @include grow;
+        }
+    }
+
+    @include md {
+        &.col-md-shrink {
+            @include shrink;
+        }
+
+        &.col-md-grow {
+            @include grow;
+        }
+    }
+
+    @include lg {
+        &.col-lg-shrink {
+            @include shrink;
+        }
+
+        &.col-lg-grow {
+            @include grow;
+        }
+    }
+
+    @include xl {
+        &.col-xl-shrink {
+            @include shrink;
+        }
+
+        &.col-xl-grow {
+            @include grow;
+        }
+    }
+}
+
+// our own implementation of a spacer (so components don't have to manage there own outer spacing)
+.divider {
+    display: flex;
+    width: 100%;
+
+    &.divider-none,
+    &.divider-xs-none {
+        margin-bottom: 0;
+    }
+
+    &.divider-extra-small,
+    &.divider-xs-extra-small {
+        margin-bottom: $qsu;
+    }
+
+    &.divider-small,
+    &.divider-xs-small {
+        margin-bottom: $hsu;
+    }
+
+    &.divider-medium,
+    &.divider-xs-medium {
+        margin-bottom: $bsu;
+    }
+
+    &.divider-large,
+    &.divider-xs-large {
+        margin-bottom: $bsu * 1.5;
+    }
+
+    &.divider-extra-large,
+    &.divider-xs-extra-large {
+        margin-bottom: $dsu;
+    }
+
+    @include sm {
+        &.divider-sm-none {
+            margin-bottom: 0;
+        }
+
+        &.divider-sm-extra-small {
+            margin-bottom: $qsu;
+        }
+
+        &.divider-sm-small {
+            margin-bottom: $hsu;
+        }
+
+        &.divider-sm-medium {
+            margin-bottom: $bsu;
+        }
+
+        &.divider-sm-large {
+            margin-bottom: $bsu * 1.5;
+        }
+
+        &.divider-sm-extra-large {
+            margin-bottom: $dsu;
+        }
+    }
+
+    @include md {
+        &.divider-md-none {
+            margin-bottom: 0;
+        }
+
+        &.divider-md-extra-small {
+            margin-bottom: $qsu;
+        }
+
+        &.divider-md-small {
+            margin-bottom: $hsu;
+        }
+
+        &.divider-md-medium {
+            margin-bottom: $bsu;
+        }
+
+        &.divider-md-large {
+            margin-bottom: $bsu * 1.5;
+        }
+
+        &.divider-md-extra-large {
+            margin-bottom: $dsu;
+        }
+    }
+
+    @include lg {
+        &.divider-lg-none {
+            margin-bottom: 0;
+        }
+
+        &.divider-lg-extra-small {
+            margin-bottom: $qsu;
+        }
+
+        &.divider-lg-small {
+            margin-bottom: $hsu;
+        }
+
+        &.divider-lg-medium {
+            margin-bottom: $bsu;
+        }
+
+        &.divider-lg-large {
+            margin-bottom: $bsu * 1.5;
+        }
+
+        &.divider-lg-extra-large {
+            margin-bottom: $dsu;
+        }
+    }
+
+    @include xl {
+        &.divider-xl-none {
+            margin-bottom: 0;
+        }
+
+        &.divider-xl-extra-small {
+            margin-bottom: $qsu;
+        }
+
+        &.divider-xl-small {
+            margin-bottom: $hsu;
+        }
+
+        &.divider-xl-medium {
+            margin-bottom: $bsu;
+        }
+
+        &.divider-xl-large {
+            margin-bottom: $bsu * 1.5;
+        }
+
+        &.divider-xl-extra-large {
+            margin-bottom: $dsu;
+        }
+    }
+}

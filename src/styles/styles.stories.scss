@@ -1,0 +1,48 @@
+@import '@module';
+.example {
+    > div > div {
+        background: $colour-base;
+        padding: $bsu;
+        border: 1px solid $colour-base-depth;
+    }
+
+    .show-xs {
+        @include sm {
+            display: none;
+        }
+    }
+
+    .show-sm {
+        @include md {
+            display: none;
+        }
+        @include xs-down {
+            display: none;
+        }
+    }
+    .show-md {
+        @include lg {
+            display: none;
+        }
+        @include sm-down {
+            display: none;
+        }
+    }
+    .show-lg {
+        @include xl {
+            display: none;
+        }
+        @include md-down {
+            display: none;
+        }
+    }
+    .show-xl {
+        @include xxl {
+            //display: none;
+        }
+        @include lg-down {
+            display: none;
+        }
+    }
+}
+

@@ -1,0 +1,92 @@
+$colour-primary: #634394;
+$colour-primary-shade: #342d61;
+$colour-primary-highlight: #bab0d7;
+$colour-primary-saturated: #a076ff;
+$colour-primary-faded: #eee9f4;
+
+$colour-secondary: #e0c97b;
+$colour-secondary-shade: darken($colour-secondary, 5%);
+$colour-secondary-highlight: lighten($colour-secondary, 10%);
+
+$colour-plan-essential: #7fd373;
+$colour-plan-professional: #ce4eb8;
+$colour-plan-commercial: #287ee5;
+
+$colour-black: #252525;
+$colour-white: #ffffff;
+$colour-white-gray: #f5f5f5;
+$colour-lighter-gray: #e8e8e8;
+$colour-light-gray: #c7c7c7;
+$colour-gray: #9b9b9b;
+$colour-dark-gray: #797979;
+
+$background-body: lighten($colour-white-gray, 1%);
+
+$colour-base: $colour-white;
+$colour-base-shade: $colour-white-gray;
+$colour-base-depth: $colour-lighter-gray;
+$colour-base-dark: $colour-light-gray;
+$colour-base-disabled: darken($colour-lighter-gray, 5%);
+
+$colour-text: $colour-black;
+$colour-text-shade: $colour-dark-gray;
+$colour-text-depth: $colour-gray;
+$colour-text-faded: $colour-light-gray;
+$colour-text-inversed: $colour-white;
+$colour-text-inversed-shade: $colour-white-gray;
+$colour-text-inversed-depth: $colour-lighter-gray;
+$colour-text-inversed-faded: $colour-light-gray;
+$colour-text-inversed-disabled: $colour-gray;
+$colour-text-disabled: $colour-gray;
+
+$colour-info: #21a0cc;
+$colour-info-shade: darken($colour-info, 2.5%);
+
+$colour-warning: #f0933a;
+$colour-warning-shade: darken($colour-warning, 7%);
+$colour-warning-dark: darken($colour-warning, 40%);
+
+$colour-success: #7fd373;
+$colour-success-highlight: lighten(saturate($colour-success, 10%), 5%);
+$colour-success-shade: darken($colour-success, 2.5%);
+$colour-success-dark: darken($colour-success, 40%);
+
+$colour-error: #d46b5f;
+$colour-error-highlight: lighten(saturate($colour-error, 10%), 5%);
+$colour-error-shade: darken($colour-error, 5%);
+$colour-error-dark: #451212;
+
+$focus-box-shadow: 0 0 0 0px transparentize($colour-primary, 0.5),
+    0 0 0 2px transparentize($colour-primary, 0.6), 0 0 0 4px transparentize($colour-primary, 0.85);
+
+$font-size-base: 1rem;
+$font-family-heading: 'sofia-pro-soft', 'Arial', sans-serif;
+$font-family-body: 'sofia-pro', 'Arial', sans-serif;
+
+$bbr: 3px;
+
+$bsu: 1rem * 1.875;
+$dsu: $bsu * 2;
+$hsu: $bsu / 2;
+$qsu: $bsu / 4;
+$tsu: ($bsu / 4) * 3;
+
+$column-spacing: 30px;
+
+$logo-height: 80px;
+
+$transition: cubic-bezier(0.4, 0, 0.2, 1);
+$transition-accelerate: cubic-bezier(0.4, 0, 1, 1);
+$transition-decelerate: cubic-bezier(0, 0, 0.2, 1);
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1440px;
+
+$container-width: 1424px;
+
+$shadow-bottom: 0 1px 3px rgba(0, 0, 0, 0.2);
+$shadow-middle: 0 3px 6px rgba(0, 0, 0, 0.2);
+$shadow-top: 0 3px 8px rgba(0, 0, 0, 0.5);

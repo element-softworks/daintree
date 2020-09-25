@@ -1,3 +1,15 @@
-@import "reset.css";
 @import url("https://use.typekit.net/aij4puh.css");
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+/* BASE CONFIG */
+@import 'base/config';
+
+/* THIRD PARTY */
+@import '~normalize.css';
+//@import '~slick-carousel/slick/slick.css';
+//@import '~slick-carousel/slick/slick-theme.css';
+
+/* BASE */
+@import 'base/breakpoints';
+@import 'base/typography';
+@import 'base/layout';

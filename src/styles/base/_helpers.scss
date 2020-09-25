@@ -1,0 +1,29 @@
+%emphasis {
+    font-size: $font-size-base * 0.6875;
+    text-transform: uppercase;
+    color: $colour-text-depth;
+    font-weight: 700;
+    letter-spacing: 0.02rem;
+    font-family: $font-family-heading;
+}
+
+%emphasis-big {
+    @extend %emphasis;
+    font-size: $font-size-base * 0.875;
+}
+
+%center {
+    text-align: center;
+}
+
+%visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

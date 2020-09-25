@@ -4,23 +4,26 @@ import { themes } from '@storybook/theming';
 import React from 'react';
 import { ThemeProvider } from "theming";
 import * as clientThemes from '../src/styles/themes';
+import '@styles/styles.stories.scss';
+import '@storybook/addon-console';
+
 
 export const globalTypes = {
-	locale: {
-		name: 'Locale',
-		description: 'Internationalization locale',
-		defaultValue: 'en',
-		toolbar: {
-			icon: 'globe',
-			items: [
-				{ value: 'en', right: '🇺🇸', title: 'English' },
-				{ value: 'fr', right: '🇫🇷', title: 'Français' },
-				{ value: 'es', right: '🇪🇸', title: 'Español' },
-				{ value: 'zh', right: '🇨🇳', title: '中文' },
-				{ value: 'kr', right: '🇰🇷', title: '한국어' },
-			],
-		},
-	},
+	// locale: {
+	// 	name: 'Locale',
+	// 	description: 'Internationalization locale',
+	// 	defaultValue: 'en',
+	// 	toolbar: {
+	// 		icon: 'globe',
+	// 		items: [
+	// 			{ value: 'en', right: '🇺🇸', title: 'English' },
+	// 			{ value: 'fr', right: '🇫🇷', title: 'Français' },
+	// 			{ value: 'es', right: '🇪🇸', title: 'Español' },
+	// 			{ value: 'zh', right: '🇨🇳', title: '中文' },
+	// 			{ value: 'kr', right: '🇰🇷', title: '한국어' },
+	// 		],
+	// 	},
+	// },
 	theme: {
 		name: 'Theme',
 		description: 'Global theme for components',
