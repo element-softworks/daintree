@@ -3,3 +3,5 @@ node_modules
 playground/node_modules
 dist
 hooks
+
+storybook-static/
