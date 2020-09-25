@@ -44,8 +44,8 @@
 		"build-watch": "rollup src/components/index.ts -c -w",
 		"start-playground": "cd playground && yarn run start",
 		"i-all": "yarn && cd playground && yarn",
-		"storybook": "start-storybook -p 6006",
-		"dev": "build-storybook"
+		"dev": "start-storybook -p 6006",
+		"storybook": "build-storybook"
 	},
 	"files": [
 		"dist"
