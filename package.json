@@ -1,6 +1,6 @@
 {
 	"name": "@element-softworks/daintree",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "React Packages",
 	"author": "Luke Brown",
 	"license": "MIT",
@@ -45,7 +45,6 @@
 	"scripts": {
 		"build": "rollup -c",
 		"build-watch": "rollup src/components/index.ts -c -w",
-		"start-playground": "cd playground && yarn run start",
 		"i-all": "yarn && cd playground && yarn",
 		"dev": "start-storybook -p 6006",
 		"storybook": "build-storybook"
