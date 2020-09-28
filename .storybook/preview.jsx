@@ -6,6 +6,8 @@ import { ThemeProvider } from "theming";
 import * as clientThemes from '../src/styles/themes';
 import '@styles/styles.stories.scss';
 import '@storybook/addon-console';
+import { useGlobals } from '@storybook/api';
+
 
 
 export const globalTypes = {
@@ -27,7 +29,7 @@ export const globalTypes = {
 	theme: {
 		name: 'Theme',
 		description: 'Global theme for components',
-		defaultValue: 'light',
+		defaultValue: 'skipper',
 		toolbar: {
 			icon: 'circlehollow',
 			// array of plain string values or MenuItem shape (see below)
@@ -44,7 +46,7 @@ export const parameters = {
 		theme: themes.dark,
 	},
 	backgrounds: {
-		default: 'skipper',
+		defaultValue: 'skipper',
 		values: [
 			{
 				name: 'gundies',
@@ -57,14 +59,20 @@ export const parameters = {
 		],
 	}
 }
+
 const withThemeProvider = (Story, context) => {
+	// const [{ theme: themeName }] = useGlobals();
+	// console.log({themeName})
 	const theme = clientThemes[context.globals.theme];
 	parameters.backgrounds.default = context.globals.theme;
-	console.log(12, parameters.backgrounds);
+
+	// console.log({theme, clientThemes, 'context.globals.theme': context.globals.theme})
+
 	return (
 		<ThemeProvider theme={theme}>
 			<Story {...context} />
 		</ThemeProvider>
 	)
 }
+
 export const decorators = [withThemeProvider];

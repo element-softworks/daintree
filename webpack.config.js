@@ -1,5 +1,5 @@
-const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 const autoprefixer = require('autoprefixer');
 
@@ -10,10 +10,10 @@ module.exports = {
 		filename: 'index.js',
 		path: path.resolve(__dirname, 'dist'),
 		library: '',
-		libraryTarget: 'commonjs'
+		libraryTarget: 'commonjs',
 	},
 	optimization: {
-		minimize: false
+		minimize: false,
 	},
 	plugins: [new CleanWebpackPlugin()],
 	module: {
@@ -21,7 +21,7 @@ module.exports = {
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-				use: ['babel-loader']
+				use: ['babel-loader'],
 			},
 			{
 				test: /\.(ts|tsx)$/,
@@ -101,21 +101,21 @@ module.exports = {
 						},
 					},
 				],
-			}
-		]
+			},
+		],
 	},
 	resolve: {
 		alias: {
-			'@components': path.resolve(__dirname, '../src/components'),
-			'@reducers': path.resolve(__dirname, '../src/reducers'),
-			'@helpers': path.resolve(__dirname, '../src/helpers'),
-			'@actions': path.resolve(__dirname, '../src/actions'),
-			'@images': path.resolve(__dirname, '../src/images'),
-			'@styles': path.resolve(__dirname, '../src/styles'),
-			'@fonts': path.resolve(__dirname, '../src/fonts'),
-			'@views': path.resolve(__dirname, '../src/views'),
-			'@store': path.resolve(__dirname, '../src/store.js'),
+			'@components': path.resolve(__dirname, './src/components'),
+			'@reducers': path.resolve(__dirname, './src/reducers'),
+			'@helpers': path.resolve(__dirname, './src/helpers'),
+			'@actions': path.resolve(__dirname, './src/actions'),
+			'@images': path.resolve(__dirname, './src/images'),
+			'@styles': path.resolve(__dirname, './src/styles'),
+			'@fonts': path.resolve(__dirname, './src/fonts'),
+			'@views': path.resolve(__dirname, './src/views'),
+			'@store': path.resolve(__dirname, './src/store.js'),
 		},
 		extensions: ['.tsx', '.ts', '.js'],
-	}
-}
+	},
+};
