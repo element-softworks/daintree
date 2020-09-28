@@ -54,7 +54,7 @@
 	],
 	"typings": "dist/index.d.ts",
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com"
+		"registry": "https://registry.npmjs.org"
 	},
 	"dependencies": {
 		"react-flexbox-grid": "^2.1.2",

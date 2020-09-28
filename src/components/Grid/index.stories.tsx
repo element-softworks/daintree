@@ -57,9 +57,9 @@ const AllBreakpointsColumns: Story<GridProps> = () => (
         </Row>
     </Grid>
 );
-export const Primary = AllBreakpointsColumns.bind({});
+export const GridSystem = AllBreakpointsColumns.bind({});
 
-Primary.args = {
+GridSystem.args = {
     // primary: true,
     // children: object
     noMargin: 'string',
@@ -68,7 +68,7 @@ Primary.args = {
     className: 'string'
 };
 
-export const BasicGrid = () => (
+export const NestedGrid = () => (
     <Grid className={"example"}>
         <Row>
             <Col xs={12}>
@@ -84,23 +84,20 @@ export const BasicGrid = () => (
 
         <Divider/>
         <Row>
-            <Col xs={12}>
+            <Col xs={6}>
                 <TextExample/>
             </Col>
-            <Col xs={12}>
-                <TextExample/>
-            </Col>
-            <Col xs={12}>
-                <TextExample/>
-            </Col>
-            <Col xs={12}>
-                <TextExample/>
-            </Col>
-            <Col xs={12}>
-                <TextExample/>
-            </Col>
-            <Col xs={12}>
-                <TextExample/>
+            <Col xs={6}>
+                <Row>
+                    <Col xs={6}>
+
+                        <TextExample/>
+                    </Col>
+                    <Col xs={6}>
+
+                        <TextExample/>
+                    </Col>
+                </Row>
             </Col>
         </Row>
     </Grid>
