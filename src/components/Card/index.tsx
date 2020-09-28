@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './styles.module.scss';
 import { useTheme } from 'theming';
 
+// import { Card } from '../../../dist/index.js';
+
 type CardProps = {
     title: string,
     paragraph?: string  // the paragraph is optional
