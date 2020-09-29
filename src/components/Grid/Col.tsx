@@ -9,9 +9,11 @@ type ColProps = {
 	md: number | boolean;
 	lg: number | boolean;
 	xl: number | boolean;
+	first: string;
+	last: string;
 };
 
-const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl }) => {
+const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl, first, last }) => {
 	const classNames = [
 		{ name: 'xs', size: xs },
 		{ name: 'sm', size: sm },
@@ -29,10 +31,8 @@ const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl }) => {
 					: typeof size === 'boolean' && name !== 'xs'
 					? styles[`col${capitalise(name)}`]
 					: '',
-				// ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].reduce((acc: string[], size: number) => [
-				// 	...acc,
-				// 	styles[`col${capitalise(name)}`]
-				// ], []),
+				first ? (first === 'xs' ? styles.colFirst : styles[`colFirst${capitalise(name)}`]) : '',
+				last ? (last === 'xs' ? styles.colLast : styles[`colLast${capitalise(name)}`]) : '',
 			],
 			[],
 		)

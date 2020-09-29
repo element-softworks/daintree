@@ -53,35 +53,35 @@ $grid-breakpoints: xs, sm, md, lg, xl;
 					flex-direction: column;
 				}
 
-				&.between {
+				&.row-between {
 					justify-content: space-between;
 				}
 
-				&.around {
+				&.row-around {
 					justify-content: space-around;
 				}
 
-				&.start {
+				&.row-start {
 					justify-content: flex-start;
 				}
 
-				&.center {
+				&.row-center {
 					justify-content: center;
 				}
 
-				&.end {
+				&.row-end {
 					justify-content: flex-end;
 				}
 
-				&.top {
+				&.row-top {
 					align-items: flex-start;
 				}
 
-				&.middle {
+				&.row-middle {
 					align-items: center;
 				}
 
-				&.bottom {
+				&.row-bottom {
 					align-items: flex-end;
 				}
 			} @else {
@@ -93,35 +93,35 @@ $grid-breakpoints: xs, sm, md, lg, xl;
 					flex-direction: column;
 				}
 
-				&.between-#{$breakpoint} {
+				&.row-between-#{$breakpoint} {
 					justify-content: space-between;
 				}
 
-				&.around-#{$breakpoint} {
+				&.row-around-#{$breakpoint} {
 					justify-content: space-around;
 				}
 
-				&.start-#{$breakpoint} {
+				&.row-start-#{$breakpoint} {
 					justify-content: flex-start;
 				}
 
-				&.center-#{$breakpoint} {
+				&.row-center-#{$breakpoint} {
 					justify-content: center;
 				}
 
-				&.end-#{$breakpoint} {
+				&.row-end-#{$breakpoint} {
 					justify-content: flex-end;
 				}
 
-				&.top-#{$breakpoint} {
+				&.row-top-#{$breakpoint} {
 					align-items: flex-start;
 				}
 
-				&.middle-#{$breakpoint} {
+				&.row-middle-#{$breakpoint} {
 					align-items: center;
 				}
 
-				&.bottom-#{$breakpoint} {
+				&.row-bottom-#{$breakpoint} {
 					align-items: flex-end;
 				}
 			}
@@ -184,6 +184,14 @@ $grid-breakpoints: xs, sm, md, lg, xl;
 	flex-grow: 1;
 	max-width: 100%;
 
+	&.col-first {
+		order: -1;
+	}
+
+	&.col-last {
+		order: 1;
+	}
+
 	@each $breakpoint in $grid-breakpoints {
 		@include breakpoint($breakpoint) {
 			@if $breakpoint != xs {
@@ -191,6 +199,14 @@ $grid-breakpoints: xs, sm, md, lg, xl;
 					flex-basis: 0;
 					flex-grow: 1;
 					max-width: 100%;
+				}
+
+				&.col-first-#{$breakpoint} {
+					order: 1;
+				}
+
+				&.col-last-#{$breakpoint} {
+					order: 9999;
 				}
 			}
 		}
