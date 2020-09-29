@@ -31,8 +31,8 @@ const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl, first, last }) 
 					: typeof size === 'boolean' && name !== 'xs'
 					? styles[`col${capitalise(name)}`]
 					: '',
-				first ? (first === 'xs' ? styles.colFirst : styles[`colFirst${capitalise(name)}`]) : '',
-				last ? (last === 'xs' ? styles.colLast : styles[`colLast${capitalise(name)}`]) : '',
+				first === name ? (first === 'xs' ? styles.colFirst : styles[`colFirst${capitalise(name)}`]) : '',
+				last === name ? (last === 'xs' ? styles.colLast : styles[`colLast${capitalise(name)}`]) : '',
 			],
 			[],
 		)
