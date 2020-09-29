@@ -22,7 +22,7 @@ const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl, first, last }) 
 		{ name: 'xl', size: xl },
 	]
 		.reduce(
-			(acc: string[], { size, name }: { name: string; size: number | boolean }) => [
+			(acc: string[], { size, name }: { name: string; size?: number | boolean }) => [
 				...acc,
 				typeof size === 'number' && size >= 1 && size <= 12
 					? name === 'xs'

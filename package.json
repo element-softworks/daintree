@@ -1,9 +1,15 @@
 {
 	"name": "@element-softworks/daintree",
-	"version": "0.0.8",
-	"description": "React Packages",
+	"version": "0.0.13",
+	"description": "React Component Library",
 	"author": "Luke Brown",
 	"license": "MIT",
+	"keywords": [
+		"react",
+		"componenet",
+		"library",
+		"element softworks"
+	],
 	"devDependencies": {
 		"@babel/core": "^7.11.6",
 		"@storybook/addon-a11y": "^6.0.21",
@@ -24,17 +30,13 @@
 		"babel-loader": "^8.1.0",
 		"clean-webpack-plugin": "^3.0.0",
 		"css-loader": "^4.3.0",
-		"css-modules-typescript-loader": "^4.0.1",
 		"dts-bundle": "^0.7.3",
 		"node-sass": "^4.14.1",
 		"normalize.css": "^8.0.1",
 		"npm-run-all": "^4.1.5",
 		"postcss-loader": "^4.0.2",
 		"react-is": "^16.13.1",
-		"rollup": "^2.27.1",
-		"rollup-plugin-delete": "^2.0.0",
-		"rollup-plugin-postcss": "^3.1.8",
-		"rollup-plugin-typescript2": "^0.27.2",
+		"postcss": "^8.1.1",
 		"sass-loader": "^10.0.2",
 		"style-loader": "^1.2.1",
 		"styled-components": "^5.2.0",
@@ -45,25 +47,21 @@
 		"webpack-node-externals": "^2.5.2"
 	},
 	"peerDependencies": {
-		"react": "^16.10.2",
-		"react-dom": "^16.10.2",
 		"styled-components": "^4.4.0"
 	},
 	"main": "dist/index.js",
 	"scripts": {
-		"build": "webpack --mode production",
-		"i-all": "yarn && cd playground && yarn",
+		"build": "build-storybook",
 		"dev": "start-storybook -p 6006",
-		"build-storybook": "build-storybook"
+		"publish2": "webpack --mode production && yarn publish --registry https://npm.pkg.github.com && yarn publish --registry https://registry.npmjs.org"
 	},
 	"files": [
 		"dist"
 	],
 	"typings": "dist/index.d.ts",
-	"publishConfig": {
-		"registry": "https://registry.npmjs.org"
-	},
 	"dependencies": {
+		"react": "^16.10.2",
+		"react-dom": "^16.10.2",
 		"react-flexbox-grid": "^2.1.2",
 		"theming": "^3.3.0"
 	}

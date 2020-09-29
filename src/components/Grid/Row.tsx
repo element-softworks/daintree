@@ -4,18 +4,18 @@ import { capitalise } from '@helpers';
 import styles from './styles.module.scss';
 
 type RowProps = {
-	column: string;
-	row: string;
-	between: string;
-	around: string;
-	start: string;
-	center: string;
-	end: string;
-	top: string;
-	middle: string;
-	bottom: string;
-	gutters: boolean;
-	style: object;
+	column?: string;
+	row?: string;
+	between?: string;
+	around?: string;
+	start?: string;
+	center?: string;
+	end?: string;
+	top?: string;
+	middle?: string;
+	bottom?: string;
+	gutters?: boolean;
+	style?: object;
 };
 
 const Row: React.FC<RowProps> = ({

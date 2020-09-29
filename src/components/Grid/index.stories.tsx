@@ -88,12 +88,7 @@ const AllBreakpointsColumns: Story<GridProps> = () => (
 export const GridSystem = AllBreakpointsColumns.bind({});
 
 GridSystem.args = {
-	// primary: true,
-	// children: object
-	noMargin: 'string',
-	noPadding: 'string',
-	fullHeight: 'string',
-	className: 'string',
+	fluid: false,
 };
 
 export const NestedGrid = () => (
@@ -157,23 +152,3 @@ export const ManyItemsWithDivider = () => (
 		</Grid>
 	</div>
 );
-
-//
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//     label: 'Grid',
-//     text: 'Secona',
-// };
-//
-// export const Large = Template.bind({});
-// Large.args = {
-//     label: 'Grid',
-//     text: 'large',
-//     // large: true,
-// };
-//
-// export const Small = Template.bind({});
-// Small.args = {
-//     label: 'Grid',
-//     // small: true,
-// };

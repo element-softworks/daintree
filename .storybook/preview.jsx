@@ -1,14 +1,12 @@
 import "!style-loader!css-loader!sass-loader!postcss-loader!normalize.css/normalize.css";
-import "../src/styles/styles.scss";
 import { themes } from '@storybook/theming';
 import React from 'react';
 import { ThemeProvider } from "theming";
 import * as clientThemes from '../src/styles/themes';
 import '@styles/styles.stories.scss';
 import '@storybook/addon-console';
+import "../src/styles/styles.scss";
 import { useGlobals } from '@storybook/api';
-
-
 
 export const globalTypes = {
 	// locale: {
