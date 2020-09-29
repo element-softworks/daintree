@@ -152,3 +152,23 @@ export const ManyItemsWithDivider = () => (
 		</Grid>
 	</div>
 );
+
+export const LastColumn = () => (
+	<div className={'example'}>
+		<Grid>
+			<Row>
+				<Col xs={6} last="xl">
+					<h1>1/2 Last</h1>
+				</Col>
+
+				<Col xs={6}>
+					<h1>1/2</h1>
+				</Col>
+
+				<Col xs={6}>
+					<h1>1/2</h1>
+				</Col>
+			</Row>
+		</Grid>
+	</div>
+);
