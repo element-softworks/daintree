@@ -1,14 +1,12 @@
 # Daintree UI  
 Daintree is a React component library built and utilised by Element Softworks.  
 
+See our [Storybook documentation](https://daintree.elementsoftworks.co.uk/).
+
 View all packages [here](https://github.com/element-softworks/daintree/packages/).
   
 ## Installing  
-Daintree is hosted on GitHub package not NPM. In order to use Daintree you must create a `.yarnrc` file with the following: 
-  
-```  
-"@element-softworks:registry" "https://npm.pkg.github.com"  
-```
 
-You can run `yarn add @element-softworks/daintree`.
+1. You can run `yarn add @element-softworks/daintree`.
+2. Visit the [documentation](https://daintree.elementsoftworks.co.uk/) to learn what you can use.
 

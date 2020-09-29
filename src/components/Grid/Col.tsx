@@ -4,11 +4,11 @@ import { capitalise } from '@helpers';
 import styles from './styles.module.scss';
 
 type ColProps = {
-	xs: number | boolean;
-	sm: number | boolean;
-	md: number | boolean;
-	lg: number | boolean;
-	xl: number | boolean;
+	xs?: number | boolean;
+	sm?: number | boolean;
+	md?: number | boolean;
+	lg?: number | boolean;
+	xl?: number | boolean;
 };
 
 const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl }) => {
@@ -20,7 +20,7 @@ const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl }) => {
 		{ name: 'xl', size: xl },
 	]
 		.reduce(
-			(acc: string[], { size, name }: { name: string; size: number | boolean }) => [
+			(acc: string[], { size, name }: { name: string; size?: number | boolean }) => [
 				...acc,
 				typeof size === 'number' && size >= 1 && size <= 12
 					? name === 'xs'

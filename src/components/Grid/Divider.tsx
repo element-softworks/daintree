@@ -3,13 +3,13 @@ import styles from './styles.module.scss';
 import { capitalise } from '@helpers/index';
 
 type DividerProps = {
-	margin: number;
-	xsMargin: number;
-	smMargin: number;
-	mdMargin: number;
-	lgMargin: number;
-	xlMargin: number;
-	className: object;
+	margin?: number;
+	xsMargin?: number;
+	smMargin?: number;
+	mdMargin?: number;
+	lgMargin?: number;
+	xlMargin?: number;
+	className?: object;
 };
 
 // Builds margin spacer (responsive)
@@ -30,7 +30,7 @@ const Divider: React.FC<DividerProps> = ({
 		{ name: 'xl', size: xlMargin },
 	]
 		.reduce(
-			(acc: string[], { size, name }: { name: string; size: number }) => [
+			(acc: string[], { size, name }: { name: string; size?: number }) => [
 				...acc,
 				size === 0 ? `divider${name}None` : '',
 				size === 1 ? `divider${name}ExtraSmall` : '',

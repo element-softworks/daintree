@@ -94,7 +94,7 @@ const Grid: React.FC<GridProps> = ({ children, fluid }) => (
 );
 
 type GridProps = {
-	fluid: boolean;
+	fluid?: boolean;
 };
 
 export { GridProps };
