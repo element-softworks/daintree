@@ -21,67 +21,69 @@ const TextExample = () => (
 );
 
 const AllBreakpointsColumns: Story<GridProps> = () => (
-	<Grid className={'example'}>
-		<Row>
-			<Col>
-				{`Displaying `}
-				<span className="show-xs">XS 0</span>
-				<span className="show-sm">SM 576</span>
-				<span className="show-md">MD 768</span>
-				<span className="show-lg">LG 992</span>
-				<span className="show-xl">XL 1200</span>
-				px and above
-			</Col>
-		</Row>
+	<div className={'example'}>
+		<Grid>
+			<Row>
+				<Col>
+					{`Displaying `}
+					<span className="show-xs">XS 0</span>
+					<span className="show-sm">SM 576</span>
+					<span className="show-md">MD 768</span>
+					<span className="show-lg">LG 992</span>
+					<span className="show-xl">XL 1200</span>
+					px and above
+				</Col>
+			</Row>
 
-		<Divider />
-		<Row>
-			<Col sm={6} md={4} lg={3} xl={2}>
-				<TextExample />
-			</Col>
-			<Col sm={6} md={4} lg={3} xl={2}>
-				<TextExample />
-			</Col>
-			<Col sm={6} md={4} lg={3} xl={2}>
-				<TextExample />
-			</Col>
-			<Col sm={6} md={4} lg={3} xl={2}>
-				<TextExample />
-			</Col>
-			<Col sm={6} md={4} lg={3} xl={2}>
-				<TextExample />
-			</Col>
-			<Col sm={6} md={4} lg={3} xl={2}>
-				<TextExample />
-			</Col>
-		</Row>
+			<Divider />
+			<Row>
+				<Col xs={12} sm={6} md={4} lg={3} xl={2}>
+					<TextExample />
+				</Col>
+				<Col xs={12} sm={6} md={4} lg={3} xl={2}>
+					<TextExample />
+				</Col>
+				<Col xs={12} sm={6} md={4} lg={3} xl={2}>
+					<TextExample />
+				</Col>
+				<Col xs={12} sm={6} md={4} lg={3} xl={2}>
+					<TextExample />
+				</Col>
+				<Col xs={12} sm={6} md={4} lg={3} xl={2}>
+					<TextExample />
+				</Col>
+				<Col xs={12} sm={6} md={4} lg={3} xl={2}>
+					<TextExample />
+				</Col>
+			</Row>
 
-		<Divider />
-		<Row between="xs">
-			<Col md={4}>
-				<TextExample />
-			</Col>
-			<Col md={4}>
-				<TextExample />
-			</Col>
-		</Row>
+			<Divider />
+			<Row between="xs">
+				<Col md={4}>
+					<h1>1/3</h1>
+				</Col>
+				<Col md={4}>
+					<h1>1/3</h1>
+				</Col>
+			</Row>
 
-		<Divider />
-		<Row between="xs">
-			<Col md={4}>
-				<TextExample />
-			</Col>
-			<Col md={4}>
-				<TextExample />
-			</Col>
-			<Col md={4}>
-				<TextExample />
-			</Col>
-			<Col>
-				<TextExample />
-			</Col>
-		</Row>
-	</Grid>
+			<Divider />
+			<Row between="xs">
+				<Col md={4}>
+					<h1>1/3</h1>
+				</Col>
+				<Col md={4}>
+					<h1>1/3</h1>
+				</Col>
+				<Col md={4}>
+					<h1>1/3</h1>
+				</Col>
+				<Col>
+					<h1>Auto</h1>
+				</Col>
+			</Row>
+		</Grid>
+	</div>
 );
 export const GridSystem = AllBreakpointsColumns.bind({});
 
@@ -95,56 +97,65 @@ GridSystem.args = {
 };
 
 export const NestedGrid = () => (
-	<Grid className={'example'}>
-		<Row>
-			<Col xs={12}>
-				{`Displaying `}
-				<span className="show-xs">XS 0</span>
-				<span className="show-sm">SM 576</span>
-				<span className="show-md">MD 768</span>
-				<span className="show-lg">LG 992</span>
-				<span className="show-xl">XL 1200</span>
-				px and above
-			</Col>
-		</Row>
+	<div className={'example'}>
+		<Grid>
+			<Row>
+				<Col xs={12}>
+					{`Displaying `}
+					<span className="show-xs">XS 0</span>
+					<span className="show-sm">SM 576</span>
+					<span className="show-md">MD 768</span>
+					<span className="show-lg">LG 992</span>
+					<span className="show-xl">XL 1200</span>
+					px and above
+				</Col>
+			</Row>
 
-		<Divider />
-		<Row>
-			<Col xs={6}>
-				<TextExample />
-			</Col>
-			<Col xs={6}>
-				<Row>
-					<Col xs={6}>
-						<TextExample />
-					</Col>
-					<Col xs={6}>
-						<TextExample />
-					</Col>
-				</Row>
-			</Col>
-		</Row>
-	</Grid>
+			<Divider />
+			<Row>
+				<Col xs={6}>
+					<h1>1/2</h1>
+				</Col>
+				<Col xs={6}>
+					<h1>1/2</h1>
+					<Divider />
+					<Row>
+						<Col xs={4}>
+							<h1>1/3</h1>
+						</Col>
+						<Col xs={4}>
+							<h1>1/3</h1>
+						</Col>
+						<Col xs={4}>
+							<h1>1/3</h1>
+						</Col>
+					</Row>
+				</Col>
+			</Row>
+		</Grid>
+	</div>
 );
 
 export const ManyItemsWithDivider = () => (
-	<Grid className={'example'}>
-		<Row>
-			<Col xs={4}>
-				<h1>Test</h1>
-			</Col>
-		</Row>
+	<div className={'example'}>
+		<Grid>
+			<Row>
+				<Col xs={4}>
+					<h1>1/3</h1>
+				</Col>
+			</Row>
 
-		<Divider />
-		<Row>
-			<Col xs={4}>
-				<h1>Test</h1>
-			</Col>
-			<Col xs={4}>
-				<h1>Test</h1>
-			</Col>
-		</Row>
-	</Grid>
+			<Divider />
+			<Row>
+				<Col xs={4}>
+					<h1>1/3</h1>
+				</Col>
+				<Col xs={4}>
+					<h1>1/3</h1>
+				</Col>
+			</Row>
+		</Grid>
+	</div>
 );
 
 //
