@@ -4,13 +4,13 @@ import { capitalise } from '@helpers';
 import styles from './styles.module.scss';
 
 type ColProps = {
-	xs: number | boolean;
-	sm: number | boolean;
-	md: number | boolean;
-	lg: number | boolean;
-	xl: number | boolean;
-	first: string;
-	last: string;
+	xs?: number | boolean;
+	sm?: number | boolean;
+	md?: number | boolean;
+	lg?: number | boolean;
+	xl?: number | boolean;
+	first?: string;
+	last?: string;
 };
 
 const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl, first, last }) => {
