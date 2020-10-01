@@ -11,10 +11,11 @@ type ColProps = {
 	xl?: number | boolean;
 	first?: string;
 	last?: string;
+	shrink?: string;
 	style?: object;
 };
 
-const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl, first, last, style }) => {
+const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl, first, last, shrink, style }) => {
 	const classNames = [
 		{ name: 'xs', size: xs },
 		{ name: 'sm', size: sm },
@@ -34,6 +35,7 @@ const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl, first, last, st
 					: '',
 				first === name ? (first === 'xs' ? styles.colFirst : styles[`colFirst${capitalise(name)}`]) : '',
 				last === name ? (last === 'xs' ? styles.colLast : styles[`colLast${capitalise(name)}`]) : '',
+				shrink === name ? (shrink === 'xs' ? styles.colShrink : styles[`colShrink${capitalise(name)}`]) : '',
 			],
 			[],
 		)

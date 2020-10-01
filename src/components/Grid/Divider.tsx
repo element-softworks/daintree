@@ -13,15 +13,7 @@ type DividerProps = {
 };
 
 // Builds margin spacer (responsive)
-const Divider: React.FC<DividerProps> = ({
-	margin = 3,
-	xsMargin,
-	smMargin,
-	mdMargin,
-	lgMargin,
-	xlMargin,
-	children,
-}) => {
+const Divider: React.FC<DividerProps> = ({ margin, xsMargin, smMargin, mdMargin, lgMargin, xlMargin, children }) => {
 	const classNames = [
 		{ name: 'xs', size: xsMargin },
 		{ name: 'sm', size: smMargin },
@@ -32,12 +24,12 @@ const Divider: React.FC<DividerProps> = ({
 		.reduce(
 			(acc: string[], { size, name }: { name: string; size?: number }) => [
 				...acc,
-				size === 0 ? `divider${name}None` : '',
-				size === 1 ? `divider${name}ExtraSmall` : '',
-				size === 2 ? `divider${name}Small` : '',
-				size === 3 ? `divider${name}Medium` : '',
-				size === 4 ? `divider${name}Large` : '',
-				size === 5 ? `divider${name}ExtraLarge` : '',
+				size === 0 ? styles[`divider${capitalise(name)}None`] : '',
+				size === 1 ? styles[`divider${capitalise(name)}ExtraSmall`] : '',
+				size === 2 ? styles[`divider${capitalise(name)}Small`] : '',
+				size === 3 ? styles[`divider${capitalise(name)}Medium`] : '',
+				size === 4 ? styles[`divider${capitalise(name)}Large`] : '',
+				size === 5 ? styles[`divider${capitalise(name)}ExtraLarge`] : '',
 			],
 			[],
 		)
@@ -45,7 +37,9 @@ const Divider: React.FC<DividerProps> = ({
 			margin === 0 ? styles.dividerNone : '',
 			margin === 1 ? styles.dividerExtraSmall : '',
 			margin === 2 ? styles.dividerSmall : '',
-			margin === 3 ? styles.dividerMedium : '',
+			margin === 3 || (!margin && !xsMargin && !smMargin && !mdMargin && !lgMargin && !xlMargin)
+				? styles.dividerMedium
+				: '',
 			margin === 4 ? styles.dividerLarge : '',
 			margin === 5 ? styles.dividerExtraLarge : '',
 		])

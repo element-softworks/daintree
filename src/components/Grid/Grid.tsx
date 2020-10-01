@@ -24,8 +24,8 @@ import styles from './styles.module.scss';
 
  Rows have gutters to allow correct spacing in Cols.
 
- ### Flex properties
-  A row can be configured like any flex divider to have special flex property alterations,
+ #### Flex properties
+ A row can be configured like any flex element to have special flex property alterations,
  these alterations can be configured responsively using the special breakpoint names:
 
   Using one of the flex property names below this list, you can enter the value as one of these breakpoint types
@@ -44,6 +44,7 @@ import styles from './styles.module.scss';
  - `top` \- adds `align-items: flex-start;`
  - `middle` \- adds `align-items: center;`
  - `bottom` \- adds `align-items: flex-end;`
+ - `stretch` \- adds `align-items: stretch;`
 
  Example:
  `<Row between="md" center="xs">...</Row>`
@@ -87,6 +88,61 @@ import styles from './styles.module.scss';
  `<Col/>` components must be placed inside of a `<Row/>` component.
 
  If you write multiple columns that total more than 100% width overall, then the overlapping columns will wrap onto a new row.
+
+ #### Flex properties
+ A row can be configured like any flex child element to have special flex property alterations,
+ these alterations can be configured responsively using the special breakpoint names:
+
+ Using one of the flex property names below this list, you can enter the value as one of these breakpoint types
+ declared below:
+ - `xs` used on devices from 0px and above.
+ - `sm` used on devices from 576px and above.
+ - `md` used on devices from 768px and above.
+ - `lg` used on devices from 992px and above.
+ - `xl` used on devices from 1200px and above.
+
+ - `first` \- adds `order: -1;`
+ - `last` \- adds `order: 1;`
+
+ There is also a responsive shrink property that allows a column to ignore the growing behaviour and instead only
+ take the width of its own children width, this is great use for pushing elements around such as aligning content
+ to the right instead of using custom flex styling or floating.
+
+ - `shrink` \- adds `flex: 0 1 auto`
+
+ ### Divider
+
+ Dividers manage spacing between rows and other content, it can be placed anywhere in the project and has fixed and
+ responsive sizes.
+
+ A divider supports 6 margin-bottom sizes:
+ - `0` none
+ - `1` extra small
+ - `2` small
+ - `3` medium (default)
+ - `4` large
+ - `5` extra large
+
+ Dividers support either responsive or fixed variation, to use a fixed variation simply specify no props to use the
+ default `3` margin spacing, or pass `margin` as a prop. To use responsive spacing you must prefix the prop with a
+ breakpoint type such as `mdMargin`.
+
+ Pass `margin` prefixed by a breakpoint type with a number 0-5 as a reference to the 6 margin sizes available
+ - `xs` used on devices from 0px and above.
+ - `sm` used on devices from 576px and above.
+ - `md` used on devices from 768px and above.
+ - `lg` used on devices from 992px and above.
+ - `xl` used on devices from 1200px and above.
+
+  Example:
+ No margin in xs, small margin in sm, large margin in md
+ `<Divider xsMargin={0} smMargin={2} mdMargin="4" />`
+
+ Using margin 4
+ `<Divider margin={4} />`
+
+ Using default margin 3
+ `<Divider />`
 
  */
 const Grid: React.FC<GridProps> = ({ children, fluid }) => (

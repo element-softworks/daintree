@@ -172,3 +172,21 @@ export const LastColumn = () => (
 		</Grid>
 	</div>
 );
+
+export const Dividers = () => (
+	<div className={'example'}>
+		<Grid>
+			<Row>
+				<Col>
+					<h1>Column</h1>
+				</Col>
+			</Row>
+			<Divider xsMargin={0} mdMargin={3} xlMargin={5} />
+			<Row>
+				<Col>
+					<h1>Column</h1>
+				</Col>
+			</Row>
+		</Grid>
+	</div>
+);

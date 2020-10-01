@@ -14,6 +14,7 @@ type RowProps = {
 	top?: string;
 	middle?: string;
 	bottom?: string;
+	stretch?: string;
 	gutters?: boolean;
 	style?: object;
 };
@@ -30,6 +31,7 @@ const Row: React.FC<RowProps> = ({
 	top,
 	middle,
 	bottom,
+	stretch,
 	gutters = true,
 	style,
 }) => {
@@ -47,6 +49,7 @@ const Row: React.FC<RowProps> = ({
 				top === b ? styles[`rowTop${b === 'xs' ? '' : capitalise(b)}`] : '',
 				middle === b ? styles[`rowMiddle${b === 'xs' ? '' : capitalise(b)}`] : '',
 				bottom === b ? styles[`rowBottom${b === 'xs' ? '' : capitalise(b)}`] : '',
+				stretch === b ? styles[`rowStretch${b === 'xs' ? '' : capitalise(b)}`] : '',
 			],
 			[],
 		)
