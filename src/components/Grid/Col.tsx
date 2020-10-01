@@ -11,9 +11,10 @@ type ColProps = {
 	xl?: number | boolean;
 	first?: string;
 	last?: string;
+	style?: object;
 };
 
-const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl, first, last }) => {
+const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl, first, last, style }) => {
 	const classNames = [
 		{ name: 'xs', size: xs },
 		{ name: 'sm', size: sm },
@@ -38,7 +39,11 @@ const Col: React.FC<ColProps> = ({ children, xs, sm, md, lg, xl, first, last }) 
 		)
 		.join(' ');
 
-	return <div className={`${styles.col} ${classNames}`}>{children}</div>;
+	return (
+		<div className={`${styles.col} ${classNames}`} style={style}>
+			{children}
+		</div>
+	);
 };
 
 export { ColProps };
