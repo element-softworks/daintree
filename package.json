@@ -1,6 +1,6 @@
 {
 	"name": "@element-softworks/daintree",
-	"version": "0.0.13",
+	"version": "0.0.17",
 	"description": "React Component Library",
 	"author": "Luke Brown",
 	"license": "MIT",
@@ -34,9 +34,9 @@
 		"node-sass": "^4.14.1",
 		"normalize.css": "^8.0.1",
 		"npm-run-all": "^4.1.5",
+		"postcss": "^8.1.1",
 		"postcss-loader": "^4.0.2",
 		"react-is": "^16.13.1",
-		"postcss": "^8.1.1",
 		"sass-loader": "^10.0.2",
 		"style-loader": "^1.2.1",
 		"styled-components": "^5.2.0",
@@ -53,7 +53,8 @@
 	"scripts": {
 		"build": "build-storybook",
 		"dev": "start-storybook -p 6006",
-		"publish2": "webpack --mode production && yarn publish --registry https://npm.pkg.github.com && yarn publish --registry https://registry.npmjs.org"
+		"publish": "webpack --mode production && yarn publish --registry https://npm.pkg.github.com && yarn publish --registry https://registry.npmjs.org",
+		"publish3": "webpack --mode production && yarn publish --registry https://registry.npmjs.org"
 	},
 	"files": [
 		"dist"
