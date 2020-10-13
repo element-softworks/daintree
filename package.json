@@ -52,15 +52,17 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "build-storybook",
+		"build-webpack": "webpack --env.production --mode=production",
 		"dev": "start-storybook -p 6006",
-		"publish": "webpack --mode production && yarn publish --registry https://npm.pkg.github.com && yarn publish --registry https://registry.npmjs.org",
-		"publish3": "webpack --mode production && yarn publish --registry https://registry.npmjs.org"
+		"publish": "webpack --env.production --mode=production && yarn publish --registry https://npm.pkg.github.com && yarn publish --registry https://registry.npmjs.org",
+		"publish3": "webpack --env.production --mode=production && yarn publish --registry https://registry.npmjs.org"
 	},
 	"files": [
 		"dist"
 	],
 	"typings": "dist/index.d.ts",
 	"dependencies": {
+		"mini-css-extract-plugin": "^1.0.0",
 		"react": "^16.10.2",
 		"react-dom": "^16.10.2",
 		"react-flexbox-grid": "^2.1.2",
