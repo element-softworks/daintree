@@ -1,6 +1,6 @@
 {
 	"name": "@element-softworks/daintree",
-	"version": "0.0.17",
+	"version": "0.0.19",
 	"description": "React Component Library",
 	"author": "Luke Brown",
 	"license": "MIT",
@@ -54,7 +54,7 @@
 		"build": "build-storybook",
 		"build-webpack": "webpack --env.production --mode=production",
 		"dev": "start-storybook -p 6006",
-		"publish": "webpack --env.production --mode=production && yarn publish --registry https://npm.pkg.github.com && yarn publish --registry https://registry.npmjs.org",
+		"publish2": "webpack --env.production --mode=production && yarn publish --registry https://npm.pkg.github.com && yarn publish --registry https://registry.npmjs.org",
 		"publish3": "webpack --env.production --mode=production && yarn publish --registry https://registry.npmjs.org"
 	},
 	"files": [
