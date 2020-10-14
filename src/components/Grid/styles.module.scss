@@ -9,6 +9,11 @@ $grid-dividers: none, extra-small, small, medium, large, extra-large;
 	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 0 $hsu;
+
+	@include md {
+		padding: 0 $bsu;
+	}
 
 	&.grid-fluid {
 		@include xl {
@@ -18,6 +23,7 @@ $grid-dividers: none, extra-small, small, medium, large, extra-large;
 
 	@include xl {
 		width: $container-width;
+		padding: 0;
 	}
 }
 
