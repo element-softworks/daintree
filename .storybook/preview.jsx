@@ -1,8 +1,9 @@
 import "!style-loader!css-loader!sass-loader!postcss-loader!normalize.css/normalize.css";
 import { themes } from '@storybook/theming';
 import React from 'react';
-import { ThemeProvider } from "theming";
-import * as clientThemes from '../src/styles/themes';
+import Provider from "@components/Provider";
+// import { ThemeProvider } from "theming";
+// import * as clientThemes from '../src/styles/themes';
 import '@styles/styles.stories.scss';
 import '@storybook/addon-console';
 import "../src/styles/styles.scss";
@@ -67,9 +68,9 @@ const withThemeProvider = (Story, context) => {
 	// console.log({theme, clientThemes, 'context.globals.theme': context.globals.theme})
 
 	return (
-		<ThemeProvider theme={theme}>
+		<Provider theme={{ light: {}, dark: {} }}>
 			<Story {...context} />
-		</ThemeProvider>
+		</Provider>
 	)
 }
 

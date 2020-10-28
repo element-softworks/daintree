@@ -46,9 +46,6 @@
 		"webpack-cli": "^3.3.12",
 		"webpack-node-externals": "^2.5.2"
 	},
-	"peerDependencies": {
-		"styled-components": "^4.4.0"
-	},
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "build-storybook",
@@ -62,10 +59,16 @@
 	],
 	"typings": "dist/index.d.ts",
 	"dependencies": {
+		"babel-plugin-styled-components": "^1.11.1",
 		"mini-css-extract-plugin": "^1.0.0",
+		"polished": "^4.0.3",
 		"react": "^16.10.2",
 		"react-dom": "^16.10.2",
 		"react-flexbox-grid": "^2.1.2",
-		"theming": "^3.3.0"
+		"theming": "^3.3.0",
+		"typescript-plugin-styled-components": "^1.4.4"
+	},
+	"resolutions": {
+		"styled-components": "^5"
 	}
 }

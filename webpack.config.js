@@ -33,7 +33,12 @@ module.exports = (env) => {
 				},
 				{
 					test: /\.(ts|tsx)$/,
-					use: 'ts-loader',
+					use: {
+						loader: 'ts-loader',
+						options: {
+							getCustomTransformers: path.join(__dirname, './webpack.ts-transformers.js'),
+						},
+					},
 					exclude: /node_modules/,
 				},
 				{
