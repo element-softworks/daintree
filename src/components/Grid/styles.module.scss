@@ -9,10 +9,10 @@ $grid-dividers: none, extra-small, small, medium, large, extra-large;
 	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 0 $hsu;
+	padding: 0 $bsu;
 
-	@include md {
-		padding: 0 $bsu;
+	&.grid-flush {
+		padding: 0;
 	}
 
 	&.grid-fluid {
