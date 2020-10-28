@@ -1,296 +1,263 @@
 @import '@module';
 
+$grid-columns: 12;
+$grid-breakpoints: xs, sm, md, lg, xl;
+$grid-dividers: none, extra-small, small, medium, large, extra-large;
+
 .grid {
-    width: 100%;
-    padding: $hsu;
+	width: 100%;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 $hsu;
 
-    &.grid-no-padding {
-        padding: 0;
-    }
+	@include md {
+		padding: 0 $bsu;
+	}
 
-    &.grid-full-height {
-        height: inherit;
-    }
+	&.grid-fluid {
+		@include xl {
+			width: 100%;
+		}
+	}
 
-    @include sm {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    @include md {
-        width: 100%;
-        max-width: 100%;
-        padding: $bsu;
-    }
-
-    @include lg {
-        width: 100%;
-        max-width: 100%;
-        padding: $tsu 80px;
-    }
-
-    @include xl {
-        width: $container-width;
-        max-width: 100%;
-    }
+	@include xl {
+		width: $container-width;
+		padding: 0;
+	}
 }
 
 .row {
-    margin-left: -$hsu !important;
-    margin-right: -$hsu !important;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -$hsu;
+	margin-right: -$hsu;
 
-    &.row-direction-row-xs {
-        flex-direction: row;
-    }
+	&.row-no-gutters {
+		margin-left: 0;
+		margin-right: 0;
 
-    &.row-direction-column-xs {
-        flex-direction: column;
-    }
+		.col {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 
-    @include sm {
-        &.row-direction-row-sm {
-            flex-direction: row;
-        }
+	&.row-direction-row {
+		flex-direction: row;
+	}
 
-        &.row-direction-column-sm {
-            flex-direction: column;
-        }
-    }
+	&.row-direction-column {
+		flex-direction: column;
+	}
 
-    @include md {
-        &.row-direction-row-md {
-            flex-direction: row;
-        }
+	&.row-between {
+		justify-content: space-between;
+	}
 
-        &.row-direction-column-md {
-            flex-direction: column;
-        }
-    }
+	&.row-around {
+		justify-content: space-around;
+	}
 
-    @include lg {
-        &.row-direction-row-lg {
-            flex-direction: row;
-        }
+	&.row-start {
+		justify-content: flex-start;
+	}
 
-        &.row-direction-column-lg {
-            flex-direction: column;
-        }
-    }
+	&.row-center {
+		justify-content: center;
+	}
 
-    @include xl {
-        &.row-direction-row-xl {
-            flex-direction: row;
-        }
+	&.row-end {
+		justify-content: flex-end;
+	}
 
-        &.row-direction-column-xl {
-            flex-direction: column;
-        }
-    }
+	&.row-top {
+		align-items: flex-start;
+	}
+
+	&.row-middle {
+		align-items: center;
+	}
+
+	&.row-bottom {
+		align-items: flex-end;
+	}
+
+	&.row-stretch {
+		align-items: stretch;
+	}
+
+	@each $breakpoint in $grid-breakpoints {
+		@include breakpoint($breakpoint) {
+			@if $breakpoint != xs {
+				&.row-direction-row-#{$breakpoint} {
+					flex-direction: row;
+				}
+
+				&.row-direction-column-#{$breakpoint} {
+					flex-direction: column;
+				}
+
+				&.row-between-#{$breakpoint} {
+					justify-content: space-between;
+				}
+
+				&.row-around-#{$breakpoint} {
+					justify-content: space-around;
+				}
+
+				&.row-start-#{$breakpoint} {
+					justify-content: flex-start;
+				}
+
+				&.row-center-#{$breakpoint} {
+					justify-content: center;
+				}
+
+				&.row-end-#{$breakpoint} {
+					justify-content: flex-end;
+				}
+
+				&.row-top-#{$breakpoint} {
+					align-items: flex-start;
+				}
+
+				&.row-middle-#{$breakpoint} {
+					align-items: center;
+				}
+
+				&.row-bottom-#{$breakpoint} {
+					align-items: flex-end;
+				}
+
+				&.row-stretch-#{$breakpoint} {
+					align-items: stretch;
+				}
+			}
+		}
+	}
 }
 
 .col {
-    padding-left: $hsu !important;
-    padding-right: $hsu !important;
+	padding-left: $hsu;
+	padding-right: $hsu;
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;
 
-    @mixin shrink {
-        flex-shrink: 1;
-        flex-grow: 0;
-        flex-basis: auto;
-    }
+	&.col-first {
+		order: -1;
+	}
 
-    @mixin grow {
-        flex-shrink: 0;
-        flex-grow: 1;
-        flex-basis: auto;
-    }
+	&.col-last {
+		order: 1;
+	}
 
-    &.col-shrink,
-    &.col-xs-shrink {
-        @include shrink;
-    }
+	&.col-shrink {
+		flex: 0 1 auto;
+	}
 
-    &.col-grow,
-    &.col-xs-grow {
-        @include grow;
-    }
+	@each $breakpoint in $grid-breakpoints {
+		@include breakpoint($breakpoint) {
+			@if $breakpoint != xs {
+				&.col-#{$breakpoint} {
+					flex-basis: 0;
+					flex-grow: 1;
+					max-width: 100%;
+				}
 
-    @include sm {
-        &.col-sm-shrink {
-            @include shrink;
-        }
+				&.col-first-#{$breakpoint} {
+					order: 1;
+				}
 
-        &.col-sm-grow {
-            @include grow;
-        }
-    }
+				&.col-last-#{$breakpoint} {
+					order: 9999;
+				}
 
-    @include md {
-        &.col-md-shrink {
-            @include shrink;
-        }
+				&.col-shrink-#{$breakpoint} {
+					flex: 0 1 auto;
+				}
+			}
+		}
+	}
 
-        &.col-md-grow {
-            @include grow;
-        }
-    }
+	@for $i from 1 through $grid-columns {
+		&.col-#{$i} {
+			max-width: percentage($i / $grid-columns);
+			flex: 0 0 percentage($i / $grid-columns);
+		}
+	}
 
-    @include lg {
-        &.col-lg-shrink {
-            @include shrink;
-        }
-
-        &.col-lg-grow {
-            @include grow;
-        }
-    }
-
-    @include xl {
-        &.col-xl-shrink {
-            @include shrink;
-        }
-
-        &.col-xl-grow {
-            @include grow;
-        }
-    }
+	@each $breakpoint in $grid-breakpoints {
+		@for $i from 1 through $grid-columns {
+			@include breakpoint($breakpoint) {
+				@if $breakpoint != xs {
+					&.col-#{$breakpoint}-#{$i} {
+						max-width: percentage($i / $grid-columns);
+						flex: 0 0 percentage($i / $grid-columns);
+					}
+				}
+			}
+		}
+	}
 }
 
 // our own implementation of a spacer (so components don't have to manage there own outer spacing)
 .divider {
-    display: flex;
-    width: 100%;
+	display: flex;
+	width: 100%;
 
-    &.divider-none,
-    &.divider-xs-none {
-        margin-bottom: 0;
-    }
+	&.divider-none {
+		margin-bottom: 0;
+	}
 
-    &.divider-extra-small,
-    &.divider-xs-extra-small {
-        margin-bottom: $qsu;
-    }
+	&.divider-extra-small {
+		margin-bottom: $qsu;
+	}
 
-    &.divider-small,
-    &.divider-xs-small {
-        margin-bottom: $hsu;
-    }
+	&.divider-small {
+		margin-bottom: $hsu;
+	}
 
-    &.divider-medium,
-    &.divider-xs-medium {
-        margin-bottom: $bsu;
-    }
+	&.divider-medium {
+		margin-bottom: $bsu;
+	}
 
-    &.divider-large,
-    &.divider-xs-large {
-        margin-bottom: $bsu * 1.5;
-    }
+	&.divider-large {
+		margin-bottom: $bsu * 1.5;
+	}
 
-    &.divider-extra-large,
-    &.divider-xs-extra-large {
-        margin-bottom: $dsu;
-    }
+	&.divider-extra-large {
+		margin-bottom: $dsu;
+	}
 
-    @include sm {
-        &.divider-sm-none {
-            margin-bottom: 0;
-        }
+	@each $breakpoint in $grid-breakpoints {
+		@include breakpoint($breakpoint) {
+			@if $breakpoint != xs {
+				&.divider-#{$breakpoint}-none {
+					margin-bottom: 0;
+				}
 
-        &.divider-sm-extra-small {
-            margin-bottom: $qsu;
-        }
+				&.divider-#{$breakpoint}-extra-small {
+					margin-bottom: $qsu;
+				}
 
-        &.divider-sm-small {
-            margin-bottom: $hsu;
-        }
+				&.divider-#{$breakpoint}-small {
+					margin-bottom: $hsu;
+				}
 
-        &.divider-sm-medium {
-            margin-bottom: $bsu;
-        }
+				&.divider-#{$breakpoint}-medium {
+					margin-bottom: $bsu;
+				}
 
-        &.divider-sm-large {
-            margin-bottom: $bsu * 1.5;
-        }
+				&.divider-#{$breakpoint}-large {
+					margin-bottom: $bsu * 1.5;
+				}
 
-        &.divider-sm-extra-large {
-            margin-bottom: $dsu;
-        }
-    }
-
-    @include md {
-        &.divider-md-none {
-            margin-bottom: 0;
-        }
-
-        &.divider-md-extra-small {
-            margin-bottom: $qsu;
-        }
-
-        &.divider-md-small {
-            margin-bottom: $hsu;
-        }
-
-        &.divider-md-medium {
-            margin-bottom: $bsu;
-        }
-
-        &.divider-md-large {
-            margin-bottom: $bsu * 1.5;
-        }
-
-        &.divider-md-extra-large {
-            margin-bottom: $dsu;
-        }
-    }
-
-    @include lg {
-        &.divider-lg-none {
-            margin-bottom: 0;
-        }
-
-        &.divider-lg-extra-small {
-            margin-bottom: $qsu;
-        }
-
-        &.divider-lg-small {
-            margin-bottom: $hsu;
-        }
-
-        &.divider-lg-medium {
-            margin-bottom: $bsu;
-        }
-
-        &.divider-lg-large {
-            margin-bottom: $bsu * 1.5;
-        }
-
-        &.divider-lg-extra-large {
-            margin-bottom: $dsu;
-        }
-    }
-
-    @include xl {
-        &.divider-xl-none {
-            margin-bottom: 0;
-        }
-
-        &.divider-xl-extra-small {
-            margin-bottom: $qsu;
-        }
-
-        &.divider-xl-small {
-            margin-bottom: $hsu;
-        }
-
-        &.divider-xl-medium {
-            margin-bottom: $bsu;
-        }
-
-        &.divider-xl-large {
-            margin-bottom: $bsu * 1.5;
-        }
-
-        &.divider-xl-extra-large {
-            margin-bottom: $dsu;
-        }
-    }
+				&.divider-#{$breakpoint}-extra-large {
+					margin-bottom: $dsu;
+				}
+			}
+		}
+	}
 }

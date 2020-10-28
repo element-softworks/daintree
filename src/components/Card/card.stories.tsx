@@ -3,9 +3,6 @@ import React from 'react';
 import { Card, CardProps} from './index'
 import {Meta, Story} from '@storybook/react/types-6-0';
 
-import { Page, PageProps } from '../stories/Page';
-import {Header} from "../stories/Header";
-
 const Template: Story<CardProps> = (args) => <Card {...args} />;
 
 export const Primary = Template.bind({});

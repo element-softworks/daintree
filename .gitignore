@@ -6,3 +6,4 @@ hooks
 
 storybook-static/
 playground
+yarn-error.log
