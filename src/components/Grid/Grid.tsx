@@ -145,12 +145,13 @@ import styles from './styles.module.scss';
  `<Divider />`
 
  */
-const Grid: React.FC<GridProps> = ({ children, fluid }) => (
-	<div className={`${styles.grid} ${fluid ? styles.gridFluid : ''}`}>{children}</div>
+const Grid: React.FC<GridProps> = ({ children, fluid, flush }) => (
+	<div className={`${styles.grid} ${fluid ? styles.gridFluid : ''} ${flush ? styles.gridFlush : ''}`}>{children}</div>
 );
 
 type GridProps = {
 	fluid?: boolean;
+	flush?: boolean;
 };
 
 export { GridProps };

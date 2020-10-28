@@ -56,8 +56,8 @@ $colour-error-highlight: lighten(saturate($colour-error, 10%), 5%);
 $colour-error-shade: darken($colour-error, 5%);
 $colour-error-dark: #451212;
 
-$focus-box-shadow: 0 0 0 0px transparentize($colour-primary, 0.5),
-    0 0 0 2px transparentize($colour-primary, 0.6), 0 0 0 4px transparentize($colour-primary, 0.85);
+$focus-box-shadow: 0 0 0 0px transparentize($colour-primary, 0.5), 0 0 0 2px transparentize($colour-primary, 0.6),
+	0 0 0 4px transparentize($colour-primary, 0.85);
 
 $font-size-base: 1rem;
 $font-family-heading: 'sofia-pro-soft', 'Arial', sans-serif;
@@ -71,7 +71,7 @@ $hsu: $bsu / 2;
 $qsu: $bsu / 4;
 $tsu: ($bsu / 4) * 3;
 
-$column-spacing: 30px;
+$column-gutter: 30px;
 
 $logo-height: 80px;
 
@@ -82,10 +82,11 @@ $transition-decelerate: cubic-bezier(0, 0, 0.2, 1);
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
+$breakpoint-xl: 1210px;
 $breakpoint-xxl: 1440px;
 
-$container-width: 1120px;
+// 30 is gutter spacing
+$container-width: $breakpoint-xl - $column-gutter;
 
 $shadow-bottom: 0 1px 3px rgba(0, 0, 0, 0.2);
 $shadow-middle: 0 3px 6px rgba(0, 0, 0, 0.2);
