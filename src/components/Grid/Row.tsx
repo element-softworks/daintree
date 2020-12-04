@@ -10,6 +10,7 @@ type RowProps = {
 	around?: string;
 	start?: string;
 	center?: string;
+	textCenter?: string;
 	end?: string;
 	top?: string;
 	middle?: string;
@@ -27,6 +28,7 @@ const Row: React.FC<RowProps> = ({
 	around,
 	start,
 	center,
+	textCenter,
 	end,
 	top,
 	middle,
@@ -45,6 +47,7 @@ const Row: React.FC<RowProps> = ({
 				around === b ? styles[`rowAround${b === 'xs' ? '' : capitalise(b)}`] : '',
 				start === b ? styles[`rowStart${b === 'xs' ? '' : capitalise(b)}`] : '',
 				center === b ? styles[`rowCenter${b === 'xs' ? '' : capitalise(b)}`] : '',
+				textCenter === b ? styles[`rowTextCenter${b === 'xs' ? '' : capitalise(b)}`] : '',
 				end === b ? styles[`rowEnd${b === 'xs' ? '' : capitalise(b)}`] : '',
 				top === b ? styles[`rowTop${b === 'xs' ? '' : capitalise(b)}`] : '',
 				middle === b ? styles[`rowMiddle${b === 'xs' ? '' : capitalise(b)}`] : '',

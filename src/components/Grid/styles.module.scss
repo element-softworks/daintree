@@ -65,6 +65,9 @@ $grid-dividers: none, extra-small, small, medium, large, extra-large;
 
 	&.row-center {
 		justify-content: center;
+	}
+
+	&.row-text-center {
 		text-align: center;
 	}
 
@@ -113,6 +116,9 @@ $grid-dividers: none, extra-small, small, medium, large, extra-large;
 
 				&.row-center-#{$breakpoint} {
 					justify-content: center;
+				}
+
+				&.row-text-center-#{$breakpoint} {
 					text-align: center;
 				}
 
