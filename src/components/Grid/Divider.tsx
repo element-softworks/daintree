@@ -24,12 +24,12 @@ const Divider: React.FC<DividerProps> = ({ margin, xsMargin, smMargin, mdMargin,
 		.reduce(
 			(acc: string[], { size, name }: { name: string; size?: number }) => [
 				...acc,
-				size === 0 ? styles[`divider${capitalise(name)}None`] : '',
-				size === 1 ? styles[`divider${capitalise(name)}ExtraSmall`] : '',
-				size === 2 ? styles[`divider${capitalise(name)}Small`] : '',
-				size === 3 ? styles[`divider${capitalise(name)}Medium`] : '',
-				size === 4 ? styles[`divider${capitalise(name)}Large`] : '',
-				size === 5 ? styles[`divider${capitalise(name)}ExtraLarge`] : '',
+				size === 0 ? styles[`divider${name === 'xs' ? '' : capitalise(name)}None`] : '',
+				size === 1 ? styles[`divider${name === 'xs' ? '' : capitalise(name)}ExtraSmall`] : '',
+				size === 2 ? styles[`divider${name === 'xs' ? '' : capitalise(name)}Small`] : '',
+				size === 3 ? styles[`divider${name === 'xs' ? '' : capitalise(name)}Medium`] : '',
+				size === 4 ? styles[`divider${name === 'xs' ? '' : capitalise(name)}Large`] : '',
+				size === 5 ? styles[`divider${name === 'xs' ? '' : capitalise(name)}ExtraLarge`] : '',
 			],
 			[],
 		)
